@@ -17,7 +17,7 @@ function distanceFromHqInFeet(blocks) {
 
 function distanceTravelledInFeet(startingBlock, endingBlock) {
   const blockLength = 264;
-  
+
   if (endingBlock > startingBlock) {
     return (endingBlock - startingBlock) * blockLength;
   } else if (endingBlock < startingBlock) {
