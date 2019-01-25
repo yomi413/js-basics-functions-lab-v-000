@@ -1,11 +1,11 @@
 // Code your solution in this file!
-function distanceFromHqInBlocks(blocks) {
+function distanceFromHqInBlocks(pickupLocation) {
   const hq = 42;
 
-  if (blocks > hq) {
-    return blocks - hq;
-  } else if (blocks < hq) {
-    return hq - blocks;
+  if (pickupLocation > hq) {
+    return pickupLocation - hq;
+  } else if (pickupLocation < hq) {
+    return hq - pickupLocation;
   }
 }
 
@@ -15,13 +15,13 @@ function distanceFromHqInFeet(blocks) {
   return distanceFromHqInBlocks(blocks) * blockLength;
 }
 
-function distanceTravelledInFeet(startingBlock, endingBlock) {
+function distanceTravelledInFeet(start, destination) {
   const blockLength = 264;
-
-  if (endingBlock > startingBlock) {
-    return (endingBlock - startingBlock) * blockLength;
-  } else if (endingBlock < startingBlock) {
-    return (startingBlock - endingBlock) * blockLength;
+  
+  if (destination > start) {
+    return (destination - start) * blockLength;
+  } else if (destination < start) {
+    return (start - destination) * blockLength;
   }
 }
 
@@ -29,7 +29,7 @@ function calculatesFarePrice(start, destination) {
   let distance = distanceTravelledInFeet(start, destination);
 
   if (distance <= 400) {
-    return (distance) * 0;
+    return 0;
   } else if (distance > 400 && distance < 2000) {
     return (distance - 400) * .02;
   } else if (distance > 2000 && distance < 2500) {
